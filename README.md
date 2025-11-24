@@ -66,55 +66,50 @@ The code is organized into three global lists and several functions, all managed
 
 ##  Flowchart
 
-+------------------------------------+
-|      Doctor Appointment System     |
-+-----------------------+------------+
-                        |
-                        v
-              +------------------+
-              |   Show Menu      |
-              +------------------+
-                        |
-        -------------------------------------------------
-        |          |            |            |          |
-        v          v            v            v          v
- +-------------+ +-------------+ +----------------+ +-----------------+ +--------------------+
- | Add Patient | | Add Doctor  | | Book Appointment | View Appointments | Cancel Appointment |
- +------+------+ +------+------+ +---------+--------+ +---------+-------+ +---------+--------+
-        |               |                  |                    |                   |
-        v               v                  v                    v                   v
-+----------------+ +----------------+  +--------------------+ +------------------+ +------------------+
-| Input patient  | | Input doctor   |  | Patients list empty? | | Print all        | | Show all        |
-| details        | | details        |  +----------+---------+ | appointments      | | appointments     |
-+-------+--------+ +-------+--------+             |           +----------+---------+ +---------+--------+
-        |                  |                      |                      |                    |
-        v                  v                      v                      v                    v
-+-------------------+ +--------------------+  +--------------------+ +------------------+ +------------------+
-| Save to patients  | | Save to doctors    |  | Doctors list empty? | | Back to Menu     | | Delete selected |
-| list              | | list               |  +----------+---------+ +------------------+ | appointment      |
-+---------+---------+ +----------+---------+            |                               +---------+--------+
-          |                    |                       |                                         |
-          v                    v                       v                                         v
-   +--------------+    +--------------+   +---------------------------+                   +-------------+
-   | Back to Menu |    | Back to Menu |   | Select patient & doctor  |                   | Back to Menu|
-   +--------------+    +--------------+   | Enter date, time, reason |                   +-------------+
-                                           +------------+--------------+
-                                                        |
-                                                        v
-                                            +--------------------------+
-                                            | Save appointment         |
-                                            +------------+-------------+
-                                                         |
-                                                         v
-                                                 +--------------+
-                                                 | Back to Menu |
-                                                 +--------------+
-
-                     +--------------------------------+
-                     | If choice = Exit (option 5)    |
-                     +--------------------------------+
-                                      |
-                                      v
-                               +--------------+
-                               |     End      |
-                               +--------------+
+         ┌────────────────────────────┐
+         │    Start Program           │
+         └─────────┬──────────────────┘
+                   │
+                   ▼
+      ┌──────────────────────────────┐
+      │  Show Main Menu (1-6)        │
+      └───────┬──────────────────────┘
+              │
+              ├─────────1────────────┐
+              │ Add Patient          │
+              │ Get Name, Phone, Age,│
+              │ Sex and Save         │
+              │  ◄──────────────────┘
+              │
+              ├─────────2────────────┐
+              │ Add Doctor           │
+              │ Get Name, Spec,      │
+              │ Qualification, Save  │
+              │  ◄──────────────────┘
+              │
+              ├─────────3────────────┐
+              │ Book Appointment     │
+              │ Show Patients        │
+              │ Select Patient       │
+              │ Show Doctors         │
+              │ Select Doctor        │
+              │ Input Date, Time,    │
+              │ Reason, and Save     │
+              │  ◄──────────────────┘
+              │
+              ├─────────4────────────┐
+              │ View Appointments    │
+              │ Display List         │
+              │  ◄──────────────────┘
+              │
+              ├─────────5────────────┐
+              │ Cancel Appointment   │
+              │ Show Appointments    │
+              │ Select to Delete     │
+              │  ◄──────────────────┘
+              │
+              └─────────6────────────┐
+                            │
+              │ Exit                  │
+              │ Terminate Program     │
+              └───────────────────────┘
